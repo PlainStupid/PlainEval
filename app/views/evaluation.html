@@ -1,0 +1,22 @@
+<div class="container">
+    {{user.User.FullName}}
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Eftirfarandi mat er í gangi fyrir {{CourseID}}</div>
+        <!-- Table -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Heiti</th>
+                    <th>Heiti2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="evaluation in evaluations | filter: CourseID">
+                    <td>{{evaluation}}</td>
+                    <td>{{evaluationsName}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -22,7 +22,7 @@ angular.module('evaluationApp')
                         $http
                             .get(evalConfig.apiEndpoint + 'api/v1/my/evaluations', myHeader)
                             .success(function(dataTotal, status, headers, config) {
-                                $scope.totalEval = data;
+                                $scope.totalEval = dataTotal;
                             });
 
                     }

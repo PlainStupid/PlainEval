@@ -26,6 +26,14 @@ angular.module('evaluationApp', [
                 templateUrl: 'views/user.html',
                 controller: 'UserCtrl'
             })
+            .when('/evaluation/:Course', {
+                templateUrl: 'views/evaluation.html',
+                controller: 'EvaluationCtrl'
+            })
+            .when('/evaluation/:ID', {
+                templateUrl: 'views/evaluation.html',
+                controller: 'EvaluationCtrl'
+            })
             .when('/mycourses', {
                 templateUrl: 'views/mycourses.html',
                 controller: 'MyCoursesCtrl'
