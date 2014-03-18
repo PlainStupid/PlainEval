@@ -19,11 +19,11 @@ angular.module('evaluationApp')
                             $scope.$apply();
                         } else if (status === 200) {
                             // Set user info to cookie so we can come again without login in
-                            UserService.setUser(data.Token);
+                            UserService.setUser(data);
 
                             // Since we got 200 from the server we dont need to be on login
                             // page. Redirect to /user
-                            $location.path('/user');
+                            $location.path('/mycourses');
                         }
                     })
                     .error(function(data, status, headers, config) {

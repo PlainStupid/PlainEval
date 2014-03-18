@@ -4,8 +4,7 @@ This program is ment to be used by students and teachers in Reykjavik Univeristy
 
 Packages
 --------
-PlainEval uses AngularJS, grunt, bower. It contacts API from the RU site to get
-all of its data.
+PlainEval uses AngularJS, grunt, bower. It contacts API from the RU site to manipulate data.
 
 
 Installition
@@ -28,5 +27,5 @@ python2.7 -m SimpleHTTPServer 8081
 or
 python2.7 app/server.py  # Developing
 or
-python2.7 dist/server.py  # Production code
+python2.7 dist/server.py  # Production
 ```

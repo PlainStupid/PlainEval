@@ -26,6 +26,10 @@ angular.module('evaluationApp', [
                 templateUrl: 'views/user.html',
                 controller: 'UserCtrl'
             })
+            .when('/mycourses', {
+                templateUrl: 'views/mycourses.html',
+                controller: 'MyCoursesCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });

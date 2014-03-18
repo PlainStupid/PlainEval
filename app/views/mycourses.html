@@ -1,0 +1,28 @@
+<div class="container">
+    {{user.User.FullName}}
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Þú ert skráð/ur í eftirfarandi námskeið</div>
+        <!-- Table -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Námsgrein</th>
+                    <th>Heiti</th>
+                    <th>Byrjar</th>
+                    <th>Endar</th>
+                    <th>Mat í gangi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="courses in userCourses | orderBy:'toString()'">
+                    <td>{{courses.CourseID}}</td>
+                    <td>{{courses.NameIS}}</td>
+                    <td>{{courses.DateBegin | date:'dd/MM/yyyy'}}</td>
+                    <td>{{courses.DateEnd | date:'dd/MM/yyyy' }}</td>
+                    <td>{{(totalEval.ID === courses.ID )? totalEVal.length() : 0}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
