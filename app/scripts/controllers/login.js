@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('evaluationApp')
-    .controller('LoginCtrl', ['$scope', '$http', 'evalConfig',
-        function($scope, $http, evalConfig) {
+    .controller('LoginCtrl', ['$scope', '$http', '$location', 'evalConfig', 'UserService',
+        function($scope, $http, $location, evalConfig, UserService) {
 
             $scope.loginSubmit = function() {
                 $http
@@ -11,11 +11,40 @@ angular.module('evaluationApp')
                         'pass': $scope.pass
                     })
                     .success(function(data, status, headers, config) {
-                        $scope.message = data;
+                        if (status === 401) {
+                            $scope.message = 'Vitlaust notendanafn eða lykilorð';
+                            $scope.showMessage = true;
+                            $scope.messageType = 'Villa: ';
+                            $scope.messageAlert = 'alert-warning';
+                            $scope.$apply();
+                        } else if (status === 200) {
+                            // Set user info to cookie so we can come again without login in
+                            UserService.setUser(data.Token);
+
+                            // Since we got 200 from the server we dont need to be on login
+                            // page. Redirect to /user
+                            $location.path('/user');
+                        }
                     })
                     .error(function(data, status, headers, config) {
-                        $scope.message = 'Username or password error';
+                        if (status === 401) {
+                            $scope.message = 'Vitlaust notendanafn eða lykilorð';
+                            $scope.showMessage = true;
+                            $scope.messageType = 'Aðvörun: ';
+                            $scope.messageAlert = 'alert-warning';
+                            $scope.$apply();
+                        } else {
+                            $scope.message = 'Villa kom upp í samskiptum';
+                            $scope.messageType = 'Villa: ';
+                            $scope.messageAlert = 'alert-danger';
+                            $scope.showMessage = true;
+                            $scope.$apply();
+                        }
                     });
+            };
+
+            $scope.switchBool = function(value) {
+                $scope[value] = !$scope[value];
             };
 
         }

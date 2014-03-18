@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for scripts/controllers/login.js</title>
+    <title>Code coverage report for scripts/services/</title>
     <meta charset="utf-8">
 
     <link rel="stylesheet" href="../../prettify.css">
@@ -180,181 +180,56 @@
 </head>
 <body>
 <div class="header low">
-    <h1>Code coverage report for <span class="entity">scripts/controllers/login.js</span></h1>
+    <h1>Code coverage report for <span class="entity">scripts/services/</span></h1>
     <h2>
         
-        Statements: <span class="metric">7.69% <small>(2 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">14.29% <small>(2 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Branches: <span class="metric">0% <small>(0 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Functions: <span class="metric">0% <small>(0 / 5)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Lines: <span class="metric">7.69% <small>(2 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">14.29% <small>(2 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">scripts/controllers/</a> &#187; login.js</div>
+    <div class="path"><a href="../../index.html">All files</a> &#187; scripts/services/</div>
 </div>
 <div class="body">
-<pre><table class="coverage">
-<tr><td class="line-count">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
-&nbsp;
-angular.module('evaluationApp')
-    .controller('LoginCtrl', ['$scope', '$http', '$location', 'evalConfig', 'UserService',
-<span class="fstat-no" title="function not covered" >        function($scope, $http, $location, evalConfig, UserService) {</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >            $scope.loginSubmit = <span class="fstat-no" title="function not covered" >function() {</span></span>
-<span class="cstat-no" title="statement not covered" >                $http</span>
-                    .post(evalConfig.apiEndpoint + 'api/v1/login', {
-                        'user': $scope.user,
-                        'pass': $scope.pass
-                    })
-                    .success(<span class="fstat-no" title="function not covered" >function(data, status, headers, config) {</span>
-<span class="cstat-no" title="statement not covered" >                        if (status === 401) {</span>
-<span class="cstat-no" title="statement not covered" >                            $scope.message = 'Vitlaust notendanafn eða lykilorð';</span>
-<span class="cstat-no" title="statement not covered" >                            $scope.showMessage = true;</span>
-<span class="cstat-no" title="statement not covered" >                            $scope.messageType = 'Villa: ';</span>
-<span class="cstat-no" title="statement not covered" >                            $scope.messageAlert = 'alert-warning';</span>
-<span class="cstat-no" title="statement not covered" >                            $scope.$apply();</span>
-                        } else <span class="cstat-no" title="statement not covered" >if (status === 200) {</span>
-                            // Set user info to cookie so we can come again without login in
-<span class="cstat-no" title="statement not covered" >                            UserService.setUser(data.Token);</span>
-&nbsp;
-                            // Since we got 200 from the server we dont need to be on login
-                            // page. Redirect to /user
-<span class="cstat-no" title="statement not covered" >                            $location.path('/user');</span>
-                        }
-                    })
-                    .error(<span class="fstat-no" title="function not covered" >function(data, status, headers, config) {</span>
-<span class="cstat-no" title="statement not covered" >                        if (status === 401) {</span>
-<span class="cstat-no" title="statement not covered" >                            $scope.message = 'Vitlaust notendanafn eða lykilorð';</span>
-<span class="cstat-no" title="statement not covered" >                            $scope.showMessage = true;</span>
-<span class="cstat-no" title="statement not covered" >                            $scope.messageType = 'Aðvörun: ';</span>
-<span class="cstat-no" title="statement not covered" >                            $scope.messageAlert = 'alert-warning';</span>
-<span class="cstat-no" title="statement not covered" >                            $scope.$apply();</span>
-                        } else {
-<span class="cstat-no" title="statement not covered" >                            $scope.message = 'Villa kom upp í samskiptum';</span>
-<span class="cstat-no" title="statement not covered" >                            $scope.messageType = 'Villa: ';</span>
-<span class="cstat-no" title="statement not covered" >                            $scope.messageAlert = 'alert-danger';</span>
-<span class="cstat-no" title="statement not covered" >                            $scope.showMessage = true;</span>
-<span class="cstat-no" title="statement not covered" >                            $scope.$apply();</span>
-                        }
-                    });
-            };
-&nbsp;
-<span class="cstat-no" title="statement not covered" >            $scope.switchBool = <span class="fstat-no" title="function not covered" >function(value) {</span></span>
-<span class="cstat-no" title="statement not covered" >                $scope[value] = !$scope[value];</span>
-            };
-&nbsp;
-        }
-    ]);
-&nbsp;</pre></td></tr>
-</table></pre>
+<div class="coverage-summary">
+<table>
+<thead>
+<tr>
+   <th data-col="file" data-fmt="html" data-html="true" class="file">File</th>
+   <th data-col="pic" data-type="number" data-fmt="html" data-html="true" class="pic"></th>
+   <th data-col="statements" data-type="number" data-fmt="pct" class="pct">Statements</th>
+   <th data-col="statements_raw" data-type="number" data-fmt="html" class="abs"></th>
+   <th data-col="branches" data-type="number" data-fmt="pct" class="pct">Branches</th>
+   <th data-col="branches_raw" data-type="number" data-fmt="html" class="abs"></th>
+   <th data-col="functions" data-type="number" data-fmt="pct" class="pct">Functions</th>
+   <th data-col="functions_raw" data-type="number" data-fmt="html" class="abs"></th>
+   <th data-col="lines" data-type="number" data-fmt="pct" class="pct">Lines</th>
+   <th data-col="lines_raw" data-type="number" data-fmt="html" class="abs"></th>
+</tr>
+</thead>
+<tbody><tr>
+	<td class="file low" data-value="userservice.js"><a href="userservice.js.html">userservice.js</a></td>
+	<td data-value="14.29" class="pic low"><span class="cover-fill" style="width: 14px;"></span><span class="cover-empty" style="width:86px;"></span></td>
+	<td data-value="14.29" class="pct low">14.29%</td>
+	<td data-value="14" class="abs low">(2&nbsp;/&nbsp;14)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="4" class="abs low">(0&nbsp;/&nbsp;4)</td>
+	<td data-value="14.29" class="pct low">14.29%</td>
+	<td data-value="14" class="abs low">(2&nbsp;/&nbsp;14)</td>
+	</tr>
 
+</tbody>
+</table>
+</div>
 </div>
 <div class="footer">
     <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Mar 18 2014 13:40:43 GMT+0000 (GMT)</div>

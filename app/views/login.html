@@ -7,5 +7,9 @@
     <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="loginSubmit()">Sign in</button>
   </form>
   <p></p>
-  <p class="alert alert-warning">{{message}}</p>
+  <div class="alert {{messageAlert}}" ng-show="showMessage">
+    <button type="button" class="close" data-ng-click="switchBool('showMessage')">&times;</button>
+    <strong>{{messageType}}</strong>{{message}}
+  </div>
 </div>
+

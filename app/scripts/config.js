@@ -1,9 +1,9 @@
 "use strict";
 
- angular.module("config", [])
+angular.module("config", [])
 
 .constant("evalConfig", {
-  "apiEndpoint": "http://dispatch.hir.is/h03/"
+    "apiEndpoint": "http://dispatch.hir.is/h03/"
 })
 
 ;
