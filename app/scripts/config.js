@@ -3,7 +3,7 @@
 angular.module("config", [])
 
 .constant("evalConfig", {
-    "apiEndpoint": "http://dispatch.hir.is/H20/"
+    "apiEndpoint": "http://project3api.haukurhaf.net/"
 })
 
 ;

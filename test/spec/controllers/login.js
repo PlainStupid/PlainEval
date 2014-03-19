@@ -1,6 +1,6 @@
 'use strict';
 
-//var url = 'http://dispatch.hir.is/h03';
+//var url = 'http://project3api.haukurhaf.net/';
 
 describe('Controller: LoginCtrl', function() {
 
@@ -8,27 +8,41 @@ describe('Controller: LoginCtrl', function() {
     beforeEach(module('evaluationApp'));
 
     var LoginCtrl,
-        scope;
+        scope,
+        httpMock,
+        evalConfigNew;
 
     // Initialize the controller and a mock scope
-    beforeEach(inject(function($controller, $rootScope) {
+    beforeEach(inject(function($controller, $rootScope, $httpBackend, evalConfig) {
         scope = $rootScope.$new();
+        httpMock = $httpBackend;
+        evalConfigNew = evalConfig;
         LoginCtrl = $controller('LoginCtrl', {
             $scope: scope
         });
     }));
 
 
-    it('should get 401 error ', function() {
-       /* var body = {
-            user: 'ddd',
-            pass: 'adad'
+    it('shoud give back status code 200', function() {
+        var postData = {
+            user: 'ragnarp12',
+            pass: '12345'
         };
 
-        $httpBackend.expectPOST('POST', url + '/api/v1/login', body)
-            .respond(401);*/
+        //$httpBackend.whenPOST(url + 'api/v1/login', postData).respond(401);
+        httpMock.expectPOST(evalConfigNew.apiEndpoint + 'api/v1/login', postData).respond(200);
+        //httpMock.flush();
+    });
 
+    it('shoud give back status code 401', function() {
+        var postData = {
+            user: 'ddd',
+            pass: 'ddd'
+        };
 
+        //$httpBackend.whenPOST(url + 'api/v1/login', postData).respond(401);
+        httpMock.expectPOST(evalConfigNew.apiEndpoint + 'api/v1/login', postData).respond(401);
+        //httpMock.flush();
     });
 
 });

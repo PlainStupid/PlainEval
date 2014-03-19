@@ -27,10 +27,6 @@ angular.module('evaluationApp')
 
                     }
                 })
-                .error(function(data, status, headers, config) {
-                    console.log(data);
-                });
-
-            console.log(myHeader);
+                .error(function(data, status, headers, config) {});
         }
     ]);

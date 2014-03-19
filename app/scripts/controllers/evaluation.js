@@ -12,21 +12,24 @@ angular.module('evaluationApp')
                     'Authorization': 'Basic ' + $scope.user.Token
                 }
             };
+            var crap = [];
 
             $http
                 .get(evalConfig.apiEndpoint + 'api/v1/my/evaluations', myHeader)
                 .success(function(data, status, headers, config) {
                     $scope.evaluations = data;
-                    for (var i = 0; i < data.length; i++) {
-                        $http
-                            .get(evalConfig.apiEndpoint + 'api/v1/courses/' + $scope.CourseID + '/' + data[i].Semester + '/evaluations/' + data[i].ID, myHeader)
-                            .success(function(data2, status, headers, config) {
-                                $scope.evaluationsName = data2;
-
-
-                            });
-                    }
+                    /*for (var i = 0; i < data.length; i++) {
+                        if (data[i].CourseID === $scope.CourseID) {
+                            $http
+                                .get(evalConfig.apiEndpoint + 'api/v1/courses/' + $scope.CourseID + '/' + data[i].Semester + '/evaluations/' + data[i].ID, myHeader)
+                                .success(function(data2, status, headers, config) {
+                                    crap.push(data2);
+                                });
+                        }
+                    }*/
 
                 });
+
+            $scope.evaluationsName = crap;
         }
     ]);

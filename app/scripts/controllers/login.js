@@ -11,23 +11,23 @@ angular.module('evaluationApp')
                         'pass': $scope.pass
                     })
                     .success(function(data, status, headers, config) {
-                        if (status === 401) {
+                        if (parseInt(status) === 401) {
                             $scope.message = 'Vitlaust notendanafn eða lykilorð';
                             $scope.showMessage = true;
                             $scope.messageType = 'Villa: ';
                             $scope.messageAlert = 'alert-warning';
                             $scope.$apply();
-                        } else if (status === 200) {
+                        } else if (parseInt(status) === 200) {
                             // Set user info to cookie so we can come again without login in
                             UserService.setUser(data);
 
                             // Since we got 200 from the server we dont need to be on login
-                            // page. Redirect to /user
+                            // page. Redirect to /mycourses
                             $location.path('/mycourses');
                         }
                     })
                     .error(function(data, status, headers, config) {
-                        if (status === 401) {
+                        if (parseInt(status) === 401) {
                             $scope.message = 'Vitlaust notendanafn eða lykilorð';
                             $scope.showMessage = true;
                             $scope.messageType = 'Aðvörun: ';

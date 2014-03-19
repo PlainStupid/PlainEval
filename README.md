@@ -7,7 +7,7 @@ Packages
 PlainEval uses AngularJS, grunt, bower. It contacts API from the RU site to manipulate data.
 
 
-Installition
+Installation
 ------------
 
 ``` sh
@@ -16,6 +16,9 @@ bower install
 ```
 
 User can run ``` grunt serve ``` to run server instance at port 9000 for testing and developing.
+
+Edit config.json for the API server.
+
 
 Run
 ---

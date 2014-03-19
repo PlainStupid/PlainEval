@@ -20,7 +20,7 @@
                     <td>{{courses.NameIS}}</td>
                     <td>{{courses.DateBegin | date:'dd/MM/yyyy'}}</td>
                     <td>{{courses.DateEnd | date:'dd/MM/yyyy' }}</td>
-                    <td>{{(totalEval | filter: courses.CourseID) }}</td>
+                    <td>{{(totalEval | filter: courses.CourseID).length }}</td>
                 </tr>
             </tbody>
         </table>

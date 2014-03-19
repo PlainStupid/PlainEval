@@ -7,13 +7,13 @@ angular.module('evaluationApp')
             $scope.user = UserService.getUser();
 
             if (($scope.user === '') || ($scope.user === undefined)) {
-                $scope.eval = 'login';
-                $scope.evalText = 'Login';
-                $scope.notification = 'Vinsamlegast skráðu þig inn!'
+                $scope.userurl = 'login';
+                $scope.userurlText = 'Login';
+                $scope.notification = 'Vinsamlegast skráðu þig inn!';
                 $scope.hideme = true;
             } else {
-                $scope.eval = 'mycourses';
-                $scope.evalText = 'My Courses';
+                $scope.userurl = 'mycourses';
+                $scope.userurlText = 'My Courses';
                 $scope.notification = 'Velkomin/nn ' + $scope.user.User.FullName;
                 $scope.hideme = false;
             }
